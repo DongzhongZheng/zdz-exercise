@@ -1,0 +1,23 @@
+from PIL import Image
+import numpy as np
+x, y_ = [],[]
+img = Image.open("../class4/MNIST_FC/mnist_image_label/mnist_train_jpg_60000/0_5.jpg")
+img = np.array(img.convert("L"))
+x.append(img)
+img = Image.open("../class4/MNIST_FC/mnist_image_label/mnist_train_jpg_60000/1_0.jpg")
+img = np.array(img.convert("L"))
+x.append(img)
+#print(x)
+x = np.array(x)
+y_.append('5')
+y_.append("0")
+y_ = np.array(y_)
+y_ = y_.astype(np.int64)
+print(x)
+print(y_)
+x = np.reshape(x, (len(x),-1))
+y_ = np.reshape(y_, (len(y_),-1))
+print(x)
+print(y_)
+x = np.reshape(x, (len(x), 28, 28))
+print(x)
